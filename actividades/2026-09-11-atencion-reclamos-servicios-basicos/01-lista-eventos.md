@@ -35,20 +35,20 @@ Este documento es la **fuente única** de la Lista de Acontecimientos: los demá
 
 | Código | Evento | Tipo |
 |---|---|---|
-| F1 | Solicitud de reclamo | F |
-| F2 | Consulta de estado del reclamo | F |
-| F3 | Actualización de datos de contacto | F |
-| F4 | Solicitud de reenvío de comprobante | F |
-| F5 | Reporte de avance de trabajo | F |
-| F6 | Reporte de resolución técnica | F |
-| F7 | Resolución comercial | F |
-| F8 | Normativa regulatoria de plazos | F |
-| T1 | Vencimiento próximo del plazo | T |
-| T2 | Vencimiento del plazo excedido | T |
-| T3 | Generación de reporte operativo diario | T |
-| T4 | Generación de reporte regulatorio mensual | T |
-| C1 | Alarma de reclamo crítico | C |
-| C2 | Escalamiento por inacción | C |
+| F1 | El usuario solicita un reclamo | F |
+| F2 | El usuario consulta el estado del reclamo | F |
+| F3 | El usuario actualiza sus datos de contacto | F |
+| F4 | El usuario solicita el reenvío de su comprobante | F |
+| F5 | La cuadrilla técnica reporta el avance del trabajo | F |
+| F6 | La cuadrilla técnica reporta la resolución técnica | F |
+| F7 | El área comercial reporta la resolución comercial | F |
+| F8 | La entidad reguladora emite la normativa de plazos | F |
+| T1 | El plazo del reclamo está próximo a vencer | T |
+| T2 | El plazo del reclamo vence sin ser atendido | T |
+| T3 | Se genera el reporte operativo diario | T |
+| T4 | Se genera el reporte regulatorio mensual | T |
+| C1 | El sistema dispara la alarma de reclamo crítico | C |
+| C2 | El sistema escala el reclamo por inacción | C |
 
 > **Nota metodológica:** `F` = flujo de dato (llegada de un dato desde una Entidad Externa), `T` = temporal (ocurre por el paso del tiempo), `C` = control (condición de estado que el sistema decide). Los eventos **no son** subfunciones ni procesos del DFD.
 
