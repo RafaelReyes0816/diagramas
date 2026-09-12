@@ -33,36 +33,24 @@ Este documento es la **fuente única** de la Lista de Acontecimientos: los demá
 
 ## 3. Lista de Acontecimientos
 
-### 3.1 Flujo externo (F) — llegada de un dato desde una Entidad Externa
+| Código | Evento | Tipo |
+|---|---|---|
+| F1 | Solicitud de reclamo | F |
+| F2 | Consulta de estado del reclamo | F |
+| F3 | Actualización de datos de contacto | F |
+| F4 | Solicitud de reenvío de comprobante | F |
+| F5 | Reporte de avance de trabajo | F |
+| F6 | Reporte de resolución técnica | F |
+| F7 | Resolución comercial | F |
+| F8 | Normativa regulatoria de plazos | F |
+| T1 | Vencimiento próximo del plazo | T |
+| T2 | Vencimiento del plazo excedido | T |
+| T3 | Generación de reporte operativo diario | T |
+| T4 | Generación de reporte regulatorio mensual | T |
+| C1 | Alarma de reclamo crítico | C |
+| C2 | Escalamiento por inacción | C |
 
-| ID | Evento | Fuente | Destino | Descripción |
-|---|---|---|---|---|
-| F1 | Solicitud de reclamo | Usuario | Sistema | Ingreso de un reclamo con datos del usuario, servicio, categoría y descripción (P1.1). |
-| F2 | Consulta de estado del reclamo | Usuario | Sistema | Solicitud de información sobre el avance y estado actual de un reclamo (P1.3). |
-| F3 | Actualización de datos de contacto | Usuario | Sistema | Cambio de teléfono/email del usuario asociado a un reclamo (P1.4). |
-| F4 | Solicitud de reenvío de comprobante | Usuario | Sistema | El usuario pide nuevamente su comprobante de reclamo (P1.2). |
-| F5 | Reporte de avance de trabajo | Cuadrilla Técnica | Sistema | La cuadrilla informa progreso sobre una orden de trabajo (P3.1). |
-| F6 | Reporte de resolución técnica | Cuadrilla Técnica | Sistema | La cuadrilla declara resuelto el problema de campo (P3.2). |
-| F7 | Resolución comercial | Área Comercial | Sistema | El área comercial informa la solución del caso (anulación, ajuste) (P3.3). |
-| F8 | Normativa regulatoria de plazos | Entidad Reguladora | Sistema | Publicación/actualización de plazos máximos por servicio, categoría y urgencia (P2.5). |
-
-### 3.2 Temporal (T) — ocurre por el paso del tiempo
-
-| ID | Evento | Disparador | Destino | Descripción |
-|---|---|---|---|---|
-| T1 | Vencimiento próximo del plazo | Se alcanza el umbral configurable (ej. 80% del plazo) | Cuadrilla Técnica / Área Comercial | El sistema detecta reclamos al borde del plazo y emite aviso (P4.1). |
-| T2 | Vencimiento del plazo excedido | Fecha límite superada sin cierre | Cuadrilla Técnica / Área Comercial | El sistema detecta reclamos vencidos y emite alerta (P4.2). |
-| T3 | Generación de reporte operativo diario | Fin del día operativo | Sistema (AD: Reportes) | Resumen diario de reclamos, avances y situación de plazos (P5.1). |
-| T4 | Generación de reporte regulatorio mensual | Cierre de mes | Entidad Reguladora | Reporte mensual de reclamos y cumplimiento de plazos (P5.2). |
-
-### 3.3 Control (C) — condiciones de estado que el sistema decide
-
-| ID | Evento | Disparador | Destino | Descripción |
-|---|---|---|---|---|
-| C1 | Alarma de reclamo crítico | Reclamo clasificado como urgencia crítica (riesgo vital o mayor, ej. fuga de alto caudal, corte prolongado) | Cuadrilla Técnica / Área Comercial | Escalamiento inmediato con máxima prioridad (P4.3). |
-| C2 | Escalamiento por inacción | Reclamo sin avance registrado en un porcentaje del plazo | Sistema (actualiza estado del reclamo) | El sistema marca el reclamo como escalado y pide aceleración al responsable (P3.6 vía P4). |
-
-> **Nota metodológica:** los eventos **no son** subfunciones ni procesos del DFD. Se disparan en procesos del Modelo de Comportamiento según las etiquetas entre paréntesis (P1.x, P2.x…), que no los reemplazan.
+> **Nota metodológica:** `F` = flujo de dato (llegada de un dato desde una Entidad Externa), `T` = temporal (ocurre por el paso del tiempo), `C` = control (condición de estado que el sistema decide). Los eventos **no son** subfunciones ni procesos del DFD.
 
 ## 4. Requerimientos funcionales clave que sostienen los eventos
 
